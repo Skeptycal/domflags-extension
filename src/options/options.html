@@ -2,7 +2,7 @@
 <html lang="en">
   <head>
     <meta charset="utf-8">
-    <title>DomFlags Settings</title>
+    <title>XPIN Settings</title>
     <link rel="stylesheet" href="/src/options/options.css">
     <script src="/js/jquery-2.1.0.min.js"></script>
     <script src="/src/options/options.js"></script>
@@ -10,53 +10,16 @@
   <body>
     <section class="main">
       <header>
-        <h1>DomFlags</h1>
+        <h1>XPIN Search</h1>
       </header>
-      <form class="auto-inspect">
-        <fieldset>
-          <p class="title">Auto-focus the first domflag:</p>
-          <div class="input">
-            <label>
-              <input type="checkbox" id="autoInspectOpen">
-              <span>upon <em>opening</em> the DevTools</span>
-            </label>
-          </div>
-          <div class="input">
-            <label>
-              <input type="checkbox" id="autoInspectReload">
-              <span>on page <em>reload</em> (with DevTools open)</span>
-            </label>
-          </div>
-        </fieldset>
-      </form>
-
-      <form class="hide-empty-panel">
+      <div class="inner">
         <fieldset>
           <div class="input">
-            <label>
-              <input type="checkbox" id="hideEmptyPanel">
-              <span>hide panel when empty</span>
-            </label>
+            <input id="search-input" type="text" class="search-input" ></input>
+            <input id="search-button" type="button" value="Search"></input>
           </div>
         </fieldset>
-      </form>
-
-      <section class="keyboard-shortcuts">
-        <p class="title">Keyboard shortcuts</p>
-        <ul>
-          <li><i>Opt/Alt + Shift + D</i> &mdash; Add/remove domflag</li>
-          <li><i>Opt/Alt + Shift + [1..3]</i> &mdash; Inspect domflag 1, 2, 3</li>
-        </ul>
-        <p class="small">Set additional shortcuts <span>chrome://extensions/configureCommands</span></p>
-      </section>
+      </div>
     </section>
-    <footer>
-      <a href="http://goo.gl/mMoXsn" target="_blank">write a review</a>
-      <span>&middot;</span>
-      <a href="http://goo.gl/hJUal1" target="_blank">report an issue</a>
-      <span>&middot;</span>
-      <a href="http://domflags.com" target="_blank">domflags.com</a>
-      <span>&middot;</span>
-      <a href="http://goo.gl/vr1zdg" target="_blank">@phillapier</a>
   </body>
 </html>

@@ -1,1 +1,0 @@
-(function(){var e,t;t=function(e){return chrome.devtools.inspectedWindow.eval("inspect($$('[domflag]')["+e+"])")},e=chrome.runtime.connect({name:"devtools"}),e.postMessage({msg:"initiate"}),e.onMessage.addListener(function(e){return"getInspectedEl"===e.name?chrome.devtools.inspectedWindow.eval("toggleDomflag($0)",{useContentScriptContext:!0}):t(e.key)})}).call(this);

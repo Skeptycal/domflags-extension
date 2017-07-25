@@ -1,25 +1,15 @@
 $ ->
-  autoInspectOpen   = document.getElementById("autoInspectOpen")
-  autoInspectReload = document.getElementById("autoInspectReload")
-  hideEmptyPanel    = document.getElementById("hideEmptyPanel")
+  performSearch = ->
+    searchStr = document.getElementById("search-input").value
+    searchURL = "https://www.google.com/search?q=site:xtube.com+%22PIN%22+-disabled+#{searchStr}"
+    chrome.tabs.create url: searchURL
 
-  save_options = ->
-    chrome.storage.local.set
-      autoInspectOpen: autoInspectOpen.checked
-      autoInspectReload: autoInspectReload.checked
-      hideEmptyPanel: hideEmptyPanel.checked
+  $('#search-button').click ->
+    console.log "click"
+    performSearch()
 
-  restore_options = ->
-    chrome.storage.local.get
-      autoInspectOpen: true
-      autoInspectReload: true
-      hideEmptyPanel: false
-    , (items) ->
-      autoInspectOpen.checked  = items.autoInspectOpen
-      autoInspectReload.checked = items.autoInspectReload
-      hideEmptyPanel.checked = items.hideEmptyPanel
-
-
-  restore_options()
-  $('form').on 'click', 'input', ->
-    save_options()
+  $('#search-input').on 'keyup', (e) ->
+    if e.keyCode == 13
+        e.preventDefault()
+        performSearch()
+        return false
